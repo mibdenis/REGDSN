@@ -13,7 +13,7 @@
     <packaging>delivery-pack</packaging>
 	
 	<scm>
-        <connection>scm:svn:${svn.home.url}/soprahr/Projects/packaged-modules/REGDSN/trunk</connection>
+        <connection>scm:svn:${svn.home.url}/soprahr/Projects/packaged-modules/REGDSN/branches/REGDSN-TEST</connection>
     </scm>
 	
     <ciManagement>

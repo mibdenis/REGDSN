@@ -1,0 +1,137 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"> 
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.soprahr.pom</groupId>
+        <artifactId>soprahr-base-pom</artifactId>
+        <version>1.0.2</version>
+    </parent>
+    
+    <groupId>com.soprahr.packaged-modules</groupId>
+    <artifactId>REGDSN</artifactId>
+    <version>4.2.000-SNAPSHOT</version>
+    <packaging>delivery-pack</packaging>
+	
+	<scm>
+        <connection>scm:svn:${svn.home.url}/soprahr/Projects/packaged-modules/REGDSN/trunk</connection>
+    </scm>
+	
+    <ciManagement>
+        <system>bamboo</system>
+        <url>${bamboo.base.url}/browse/DSNDP-REGDSNDPCI</url>
+    </ciManagement>
+	
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.hraccess.maven.plugins</groupId>
+                <artifactId>delivery-pack-maven-plugin</artifactId>
+                <version>1.2.0</version>				
+                <extensions>true</extensions>
+                <configuration>
+					<mavenRepositoryUrl>${nexus.base.url}/content/groups/all-repositories</mavenRepositoryUrl>
+                    <!-- List of deliverable components to be included in the delivery pack -->
+                    <deliverableComponents>
+                        <deliverableComponent>
+                            <!-- Name of the deliverable component in SCR -->
+                            <id>hr-dsn-reloader</id>
+                            
+                            <!-- Version of the  deliverable component in SCR -->
+                            <!-- If not specified, it is resolved from maven version  -->
+                            <!--<scrVersion>1.1</scrVersion>-->
+                            
+                            <!-- Exact maven version to download -->
+                            <mavenVersion>3.4.0</mavenVersion>
+                        </deliverableComponent>
+                        <deliverableComponent>
+                            <!-- Name of the deliverable component in SCR -->
+                            <id>regdsn</id>
+                            
+                            <!-- Version of the deliverable component in SCR -->
+                            <!-- If not specified, it is resolved from maven version -->
+                            <!--<scrVersion>1.1</scrVersion>-->
+                             
+                            <!-- Exact maven version to download -->
+                            <mavenVersion>4.1.1</mavenVersion>
+                        </deliverableComponent>    
+                        <deliverableComponent>
+                            <!-- Name of the deliverable component in SCR -->
+                            <id>dsn-hraccess-feature</id>
+                            
+                            <!-- Version of the deliverable component in SCR -->
+                            <!-- If not specified, it is resolved from maven version -->
+                            <!--<scrVersion>1.1</scrVersion>-->
+                            
+                            <!-- Exact maven version to download -->
+                            <mavenVersion>3.5.2</mavenVersion>
+                        </deliverableComponent>       
+                    </deliverableComponents>
+                    
+                    <!-- GIFTS id : Identifier of the Delivery Pack in GIFTS -->
+                    <giftsids>
+                    	<giftsid>
+                            <id>REGDSN 4XX ${project.version}</id>                            
+             			</giftsid>                    
+                    </giftsids>
+                    
+                    <!-- List of kit to install before installing the Delivery Pack -->
+                    <kitDependencies>
+                        <kitDependency>
+                            <id>KTFRREGDSN_41</id>
+                        </kitDependency>
+                    </kitDependencies>
+                    
+                    <!-- List of appliable HR Access offers -->
+                    <offers>
+                        <offer>
+                            <id>HRA7.0</id>
+                        </offer>
+                        <offer>
+                            <id>ESP7.0</id>
+                        </offer>
+                        <offer>
+                            <id>HRA7.1</id>
+                        </offer>
+                        <offer>
+                            <id>ESP7.1</id>
+                        </offer>  
+                        <offer>
+                            <id>HRA9.00</id>
+                        </offer>
+                        <offer>
+                            <id>ESP1.5</id>
+                        </offer>                        
+                        <offer>
+                            <id>HRA9.10</id>
+                        </offer>
+                        <offer>
+                            <id>ESP1.6</id>
+                        </offer>                        
+                    </offers>
+                    
+					<!-- List of server development packages (GIFTS) required to install this delivery pack -->
+					<requiredServerDevelopmentPackages>
+						<requiredServerDevelopmentPackage>
+							<ids>PAYFR:700,PAYFR:701,PAYFR:710,PAYFR:900,PAYFR:910</ids>
+						</requiredServerDevelopmentPackage> 
+					</requiredServerDevelopmentPackages> 
+					
+					<scrAgentUrl>http://hra-scms.ptx.fr.sopra/scr-agent</scrAgentUrl>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>hraccess-snapshot-repository</id>		
+            <name>HR Access Snapshots Repository</name>
+            <url>${nexus.base.url}/content/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>  
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+</project>
