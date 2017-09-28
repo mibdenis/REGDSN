@@ -1,0 +1,3 @@
+Le Module Réglementaire DSN REGDSN 4.1.102  permet de produire une DSN mensuelle et des signalements Phase 3. 
+Il ne permet plus de produire une DSN mensuelle Phase 1.
+Il ne permet plus de produire une DSN mensuelle ni des signalements Phase 2.

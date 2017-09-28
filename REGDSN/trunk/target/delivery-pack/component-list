@@ -1,0 +1,3 @@
+hr-dsn-reloader:3.4 com.hraccess.dsn:hr-dsn-reloader:3.4.0:zip:dir
+regdsn:4.1 com.soprahr.edsn:regdsn:4.1.1:tar.gz
+dsn-hraccess-feature:3.5 com.soprahr.edsn.hraccess:hraccess-feature:3.5.2:kar

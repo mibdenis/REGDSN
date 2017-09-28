@@ -1,0 +1,6 @@
+* applyto file version
+1.0
+* HR Access offers
+HRASUITE HRA7.0 ESP7.0 HRA7.1 ESP7.1 HRA9.00 ESP1.5 HRA9.10 ESP1.6
+* Required server packages
+S PAYFR:700 PAYFR:701 PAYFR:710 PAYFR:900 PAYFR:910
